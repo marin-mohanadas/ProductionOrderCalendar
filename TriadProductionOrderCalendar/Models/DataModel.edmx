@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TKMDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TKMD.dbo.mh_tbl_comp_lines' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mh_tbl_comp_lines">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="qty_requested" />
+            <PropertyRef Name="qty_allocated" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="required_date" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="qty_on_pick_tickets" />
+            <PropertyRef Name="qty_confirmed" />
+          </Key>
+          <Property Name="prod_order_number" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="item_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="qty_requested" Type="decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="qty_allocated" Type="decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="complete" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="disposition" Type="char" MaxLength="1" />
+          <Property Name="printed" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="required_date" Type="datetime" Nullable="false" />
+          <Property Name="source_location_id" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="qty_on_pick_tickets" Type="decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="qty_confirmed" Type="decimal" Precision="19" Scale="9" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TKMD.dbo.mh_tbl_gannt_chart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mh_tbl_gannt_chart">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="project_manager" />
+            <PropertyRef Name="quoted_hours" />
+            <PropertyRef Name="est_ship_date" />
+            <PropertyRef Name="assembler" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="order_date" />
+            <PropertyRef Name="required_date" />
+            <PropertyRef Name="labor_perc_complete" />
+          </Key>
+          <Property Name="prod_order_number" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="comment" Type="varchar" MaxLength="255" />
+          <Property Name="project_manager" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="quoted_hours" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="est_ship_date" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="assembler" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="job_name" Type="varchar" MaxLength="40" />
+          <Property Name="complete" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="source_location_id" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="printed" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="release_date" Type="datetime" />
+          <Property Name="order_date" Type="datetime" Nullable="false" />
+          <Property Name="required_date" Type="datetime" Nullable="false" />
+          <Property Name="location_id" Type="decimal" Precision="19" Scale="0" />
+          <Property Name="qty_requested" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_allocated" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_on_pick_tickets" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_confirmed" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="perc_ready" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="total_labor" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="labor_perc_complete" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TKMD.dbo.mh_tbl_prod_Sched_Original' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mh_tbl_prod_Sched_Original">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="item_desc" />
+            <PropertyRef Name="project_manager" />
+            <PropertyRef Name="quoted_hours" />
+            <PropertyRef Name="est_ship_date" />
+            <PropertyRef Name="assembler" />
+            <PropertyRef Name="line_number" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="completed" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="order_date" />
+            <PropertyRef Name="hdr_req_date" />
+            <PropertyRef Name="qty_to_make" />
+            <PropertyRef Name="labor_perc_complete" />
+          </Key>
+          <Property Name="prod_order_number" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="item_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="item_desc" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="comment" Type="varchar" MaxLength="255" />
+          <Property Name="project_manager" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="quoted_hours" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="est_ship_date" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="assembler" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ln_req_date" Type="datetime" />
+          <Property Name="line_number" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="order_no" Type="varchar" MaxLength="8" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="delete_flag" Type="char" MaxLength="1" />
+          <Property Name="job_name" Type="varchar" MaxLength="40" />
+          <Property Name="complete" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="source_location_id" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="completed" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="printed" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="release_date" Type="datetime" />
+          <Property Name="order_date" Type="datetime" Nullable="false" />
+          <Property Name="hdr_req_date" Type="datetime" Nullable="false" />
+          <Property Name="location_id" Type="decimal" Precision="19" Scale="0" />
+          <Property Name="qty_to_make" Type="decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="deposit_bin" Type="varchar" MaxLength="10" />
+          <Property Name="total_labor" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="labor_perc_complete" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TKMD.dbo.mh_tbl_qty_totals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mh_tbl_qty_totals">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+          </Key>
+          <Property Name="prod_order_number" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="qty_requested" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_allocated" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_on_pick_tickets" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="qty_confirmed" Type="decimal" Precision="38" Scale="9" />
+          <Property Name="perc_ready" Type="decimal" Precision="38" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="TKMDModelStoreContainer">
+          <EntitySet Name="mh_tbl_comp_lines" EntityType="Self.mh_tbl_comp_lines" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[mh_tbl_comp_lines].[prod_order_number] AS [prod_order_number], 
+[mh_tbl_comp_lines].[item_id] AS [item_id], 
+[mh_tbl_comp_lines].[qty_requested] AS [qty_requested], 
+[mh_tbl_comp_lines].[qty_allocated] AS [qty_allocated], 
+[mh_tbl_comp_lines].[complete] AS [complete], 
+[mh_tbl_comp_lines].[disposition] AS [disposition], 
+[mh_tbl_comp_lines].[printed] AS [printed], 
+[mh_tbl_comp_lines].[required_date] AS [required_date], 
+[mh_tbl_comp_lines].[source_location_id] AS [source_location_id], 
+[mh_tbl_comp_lines].[qty_on_pick_tickets] AS [qty_on_pick_tickets], 
+[mh_tbl_comp_lines].[qty_confirmed] AS [qty_confirmed]
+FROM [dbo].[mh_tbl_comp_lines] AS [mh_tbl_comp_lines]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mh_tbl_gannt_chart" EntityType="Self.mh_tbl_gannt_chart" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[mh_tbl_gannt_chart].[prod_order_number] AS [prod_order_number], 
+[mh_tbl_gannt_chart].[comment] AS [comment], 
+[mh_tbl_gannt_chart].[project_manager] AS [project_manager], 
+[mh_tbl_gannt_chart].[quoted_hours] AS [quoted_hours], 
+[mh_tbl_gannt_chart].[est_ship_date] AS [est_ship_date], 
+[mh_tbl_gannt_chart].[assembler] AS [assembler], 
+[mh_tbl_gannt_chart].[name] AS [name], 
+[mh_tbl_gannt_chart].[job_name] AS [job_name], 
+[mh_tbl_gannt_chart].[complete] AS [complete], 
+[mh_tbl_gannt_chart].[source_location_id] AS [source_location_id], 
+[mh_tbl_gannt_chart].[printed] AS [printed], 
+[mh_tbl_gannt_chart].[release_date] AS [release_date], 
+[mh_tbl_gannt_chart].[order_date] AS [order_date], 
+[mh_tbl_gannt_chart].[required_date] AS [required_date], 
+[mh_tbl_gannt_chart].[location_id] AS [location_id], 
+[mh_tbl_gannt_chart].[qty_requested] AS [qty_requested], 
+[mh_tbl_gannt_chart].[qty_allocated] AS [qty_allocated], 
+[mh_tbl_gannt_chart].[qty_on_pick_tickets] AS [qty_on_pick_tickets], 
+[mh_tbl_gannt_chart].[qty_confirmed] AS [qty_confirmed], 
+[mh_tbl_gannt_chart].[perc_ready] AS [perc_ready], 
+[mh_tbl_gannt_chart].[total_labor] AS [total_labor], 
+[mh_tbl_gannt_chart].[labor_perc_complete] AS [labor_perc_complete]
+FROM [dbo].[mh_tbl_gannt_chart] AS [mh_tbl_gannt_chart]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mh_tbl_prod_Sched_Original" EntityType="Self.mh_tbl_prod_Sched_Original" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[mh_tbl_prod_Sched_Original].[prod_order_number] AS [prod_order_number], 
+[mh_tbl_prod_Sched_Original].[item_id] AS [item_id], 
+[mh_tbl_prod_Sched_Original].[item_desc] AS [item_desc], 
+[mh_tbl_prod_Sched_Original].[comment] AS [comment], 
+[mh_tbl_prod_Sched_Original].[project_manager] AS [project_manager], 
+[mh_tbl_prod_Sched_Original].[quoted_hours] AS [quoted_hours], 
+[mh_tbl_prod_Sched_Original].[est_ship_date] AS [est_ship_date], 
+[mh_tbl_prod_Sched_Original].[assembler] AS [assembler], 
+[mh_tbl_prod_Sched_Original].[ln_req_date] AS [ln_req_date], 
+[mh_tbl_prod_Sched_Original].[line_number] AS [line_number], 
+[mh_tbl_prod_Sched_Original].[order_no] AS [order_no], 
+[mh_tbl_prod_Sched_Original].[name] AS [name], 
+[mh_tbl_prod_Sched_Original].[delete_flag] AS [delete_flag], 
+[mh_tbl_prod_Sched_Original].[job_name] AS [job_name], 
+[mh_tbl_prod_Sched_Original].[complete] AS [complete], 
+[mh_tbl_prod_Sched_Original].[source_location_id] AS [source_location_id], 
+[mh_tbl_prod_Sched_Original].[completed] AS [completed], 
+[mh_tbl_prod_Sched_Original].[printed] AS [printed], 
+[mh_tbl_prod_Sched_Original].[release_date] AS [release_date], 
+[mh_tbl_prod_Sched_Original].[order_date] AS [order_date], 
+[mh_tbl_prod_Sched_Original].[hdr_req_date] AS [hdr_req_date], 
+[mh_tbl_prod_Sched_Original].[location_id] AS [location_id], 
+[mh_tbl_prod_Sched_Original].[qty_to_make] AS [qty_to_make], 
+[mh_tbl_prod_Sched_Original].[deposit_bin] AS [deposit_bin], 
+[mh_tbl_prod_Sched_Original].[total_labor] AS [total_labor], 
+[mh_tbl_prod_Sched_Original].[labor_perc_complete] AS [labor_perc_complete]
+FROM [dbo].[mh_tbl_prod_Sched_Original] AS [mh_tbl_prod_Sched_Original]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mh_tbl_qty_totals" EntityType="Self.mh_tbl_qty_totals" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[mh_tbl_qty_totals].[prod_order_number] AS [prod_order_number], 
+[mh_tbl_qty_totals].[qty_requested] AS [qty_requested], 
+[mh_tbl_qty_totals].[qty_allocated] AS [qty_allocated], 
+[mh_tbl_qty_totals].[qty_on_pick_tickets] AS [qty_on_pick_tickets], 
+[mh_tbl_qty_totals].[qty_confirmed] AS [qty_confirmed], 
+[mh_tbl_qty_totals].[perc_ready] AS [perc_ready]
+FROM [dbo].[mh_tbl_qty_totals] AS [mh_tbl_qty_totals]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TKMDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mh_tbl_comp_lines">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="qty_requested" />
+            <PropertyRef Name="qty_allocated" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="required_date" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="qty_on_pick_tickets" />
+            <PropertyRef Name="qty_confirmed" />
+          </Key>
+          <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="item_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qty_requested" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="qty_allocated" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="disposition" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="required_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="qty_confirmed" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mh_tbl_gannt_chart">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="project_manager" />
+            <PropertyRef Name="quoted_hours" />
+            <PropertyRef Name="est_ship_date" />
+            <PropertyRef Name="assembler" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="order_date" />
+            <PropertyRef Name="required_date" />
+            <PropertyRef Name="labor_perc_complete" />
+          </Key>
+          <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="project_manager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quoted_hours" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="est_ship_date" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="assembler" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="job_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="release_date" Type="DateTime" Precision="3" />
+          <Property Name="order_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="required_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="location_id" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="qty_requested" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_allocated" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_confirmed" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="perc_ready" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="total_labor" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="labor_perc_complete" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mh_tbl_prod_Sched_Original">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="item_desc" />
+            <PropertyRef Name="project_manager" />
+            <PropertyRef Name="quoted_hours" />
+            <PropertyRef Name="est_ship_date" />
+            <PropertyRef Name="assembler" />
+            <PropertyRef Name="line_number" />
+            <PropertyRef Name="complete" />
+            <PropertyRef Name="source_location_id" />
+            <PropertyRef Name="completed" />
+            <PropertyRef Name="printed" />
+            <PropertyRef Name="order_date" />
+            <PropertyRef Name="hdr_req_date" />
+            <PropertyRef Name="qty_to_make" />
+            <PropertyRef Name="labor_perc_complete" />
+          </Key>
+          <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="item_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="item_desc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="project_manager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quoted_hours" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="est_ship_date" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="assembler" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ln_req_date" Type="DateTime" Precision="3" />
+          <Property Name="line_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="order_no" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="delete_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="job_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="completed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="release_date" Type="DateTime" Precision="3" />
+          <Property Name="order_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="hdr_req_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="location_id" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="qty_to_make" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+          <Property Name="deposit_bin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="total_labor" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="labor_perc_complete" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mh_tbl_qty_totals">
+          <Key>
+            <PropertyRef Name="prod_order_number" />
+          </Key>
+          <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="qty_requested" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_allocated" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="qty_confirmed" Type="Decimal" Precision="38" Scale="9" />
+          <Property Name="perc_ready" Type="Decimal" Precision="38" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="TKMDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mh_tbl_comp_lines" EntityType="Self.mh_tbl_comp_lines" />
+          <EntitySet Name="mh_tbl_gannt_chart" EntityType="Self.mh_tbl_gannt_chart" />
+          <EntitySet Name="mh_tbl_prod_Sched_Original" EntityType="Self.mh_tbl_prod_Sched_Original" />
+          <EntitySet Name="mh_tbl_qty_totals" EntityType="Self.mh_tbl_qty_totals" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TKMDModelStoreContainer" CdmEntityContainer="TKMDEntities">
+          <EntitySetMapping Name="mh_tbl_comp_lines">
+            <EntityTypeMapping TypeName="TKMDModel.mh_tbl_comp_lines">
+              <MappingFragment StoreEntitySet="mh_tbl_comp_lines">
+                <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+                <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+                <ScalarProperty Name="complete" ColumnName="complete" />
+                <ScalarProperty Name="disposition" ColumnName="disposition" />
+                <ScalarProperty Name="printed" ColumnName="printed" />
+                <ScalarProperty Name="required_date" ColumnName="required_date" />
+                <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+                <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+                <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mh_tbl_gannt_chart">
+            <EntityTypeMapping TypeName="TKMDModel.mh_tbl_gannt_chart">
+              <MappingFragment StoreEntitySet="mh_tbl_gannt_chart">
+                <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="project_manager" ColumnName="project_manager" />
+                <ScalarProperty Name="quoted_hours" ColumnName="quoted_hours" />
+                <ScalarProperty Name="est_ship_date" ColumnName="est_ship_date" />
+                <ScalarProperty Name="assembler" ColumnName="assembler" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="complete" ColumnName="complete" />
+                <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+                <ScalarProperty Name="printed" ColumnName="printed" />
+                <ScalarProperty Name="release_date" ColumnName="release_date" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="required_date" ColumnName="required_date" />
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+                <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+                <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+                <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+                <ScalarProperty Name="perc_ready" ColumnName="perc_ready" />
+                <ScalarProperty Name="total_labor" ColumnName="total_labor" />
+                <ScalarProperty Name="labor_perc_complete" ColumnName="labor_perc_complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mh_tbl_prod_Sched_Original">
+            <EntityTypeMapping TypeName="TKMDModel.mh_tbl_prod_Sched_Original">
+              <MappingFragment StoreEntitySet="mh_tbl_prod_Sched_Original">
+                <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="item_desc" ColumnName="item_desc" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="project_manager" ColumnName="project_manager" />
+                <ScalarProperty Name="quoted_hours" ColumnName="quoted_hours" />
+                <ScalarProperty Name="est_ship_date" ColumnName="est_ship_date" />
+                <ScalarProperty Name="assembler" ColumnName="assembler" />
+                <ScalarProperty Name="ln_req_date" ColumnName="ln_req_date" />
+                <ScalarProperty Name="line_number" ColumnName="line_number" />
+                <ScalarProperty Name="order_no" ColumnName="order_no" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="delete_flag" ColumnName="delete_flag" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="complete" ColumnName="complete" />
+                <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+                <ScalarProperty Name="completed" ColumnName="completed" />
+                <ScalarProperty Name="printed" ColumnName="printed" />
+                <ScalarProperty Name="release_date" ColumnName="release_date" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="hdr_req_date" ColumnName="hdr_req_date" />
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="qty_to_make" ColumnName="qty_to_make" />
+                <ScalarProperty Name="deposit_bin" ColumnName="deposit_bin" />
+                <ScalarProperty Name="total_labor" ColumnName="total_labor" />
+                <ScalarProperty Name="labor_perc_complete" ColumnName="labor_perc_complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mh_tbl_qty_totals">
+            <EntityTypeMapping TypeName="TKMDModel.mh_tbl_qty_totals">
+              <MappingFragment StoreEntitySet="mh_tbl_qty_totals">
+                <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+                <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+                <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+                <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+                <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+                <ScalarProperty Name="perc_ready" ColumnName="perc_ready" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

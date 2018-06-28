@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TKMDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mh_tbl_comp_lines">
+    <Key>
+      <PropertyRef Name="prod_order_number" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="qty_requested" />
+      <PropertyRef Name="qty_allocated" />
+      <PropertyRef Name="complete" />
+      <PropertyRef Name="printed" />
+      <PropertyRef Name="required_date" />
+      <PropertyRef Name="source_location_id" />
+      <PropertyRef Name="qty_on_pick_tickets" />
+      <PropertyRef Name="qty_confirmed" />
+    </Key>
+    <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="item_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qty_requested" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="qty_allocated" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="disposition" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="required_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="qty_confirmed" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mh_tbl_gannt_chart">
+    <Key>
+      <PropertyRef Name="prod_order_number" />
+      <PropertyRef Name="project_manager" />
+      <PropertyRef Name="quoted_hours" />
+      <PropertyRef Name="est_ship_date" />
+      <PropertyRef Name="assembler" />
+      <PropertyRef Name="complete" />
+      <PropertyRef Name="source_location_id" />
+      <PropertyRef Name="printed" />
+      <PropertyRef Name="order_date" />
+      <PropertyRef Name="required_date" />
+      <PropertyRef Name="labor_perc_complete" />
+    </Key>
+    <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="project_manager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quoted_hours" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="est_ship_date" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="assembler" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="job_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="release_date" Type="DateTime" Precision="3" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="required_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="location_id" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="qty_requested" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_allocated" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_confirmed" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="perc_ready" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="total_labor" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="labor_perc_complete" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mh_tbl_prod_Sched_Original">
+    <Key>
+      <PropertyRef Name="prod_order_number" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="item_desc" />
+      <PropertyRef Name="project_manager" />
+      <PropertyRef Name="quoted_hours" />
+      <PropertyRef Name="est_ship_date" />
+      <PropertyRef Name="assembler" />
+      <PropertyRef Name="line_number" />
+      <PropertyRef Name="complete" />
+      <PropertyRef Name="source_location_id" />
+      <PropertyRef Name="completed" />
+      <PropertyRef Name="printed" />
+      <PropertyRef Name="order_date" />
+      <PropertyRef Name="hdr_req_date" />
+      <PropertyRef Name="qty_to_make" />
+      <PropertyRef Name="labor_perc_complete" />
+    </Key>
+    <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="item_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="item_desc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="project_manager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quoted_hours" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="est_ship_date" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="assembler" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ln_req_date" Type="DateTime" Precision="3" />
+    <Property Name="line_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="order_no" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="delete_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="job_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="source_location_id" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="completed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="printed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="release_date" Type="DateTime" Precision="3" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="hdr_req_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="location_id" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="qty_to_make" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="deposit_bin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="total_labor" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="labor_perc_complete" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mh_tbl_qty_totals">
+    <Key>
+      <PropertyRef Name="prod_order_number" />
+    </Key>
+    <Property Name="prod_order_number" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="qty_requested" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_allocated" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_on_pick_tickets" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="qty_confirmed" Type="Decimal" Precision="38" Scale="9" />
+    <Property Name="perc_ready" Type="Decimal" Precision="38" Scale="6" />
+  </EntityType>
+  <EntityContainer Name="TKMDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mh_tbl_comp_lines" EntityType="Self.mh_tbl_comp_lines" />
+    <EntitySet Name="mh_tbl_gannt_chart" EntityType="Self.mh_tbl_gannt_chart" />
+    <EntitySet Name="mh_tbl_prod_Sched_Original" EntityType="Self.mh_tbl_prod_Sched_Original" />
+    <EntitySet Name="mh_tbl_qty_totals" EntityType="Self.mh_tbl_qty_totals" />
+  </EntityContainer>
+</Schema>

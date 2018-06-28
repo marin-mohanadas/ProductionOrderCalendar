@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TKMDModelStoreContainer" CdmEntityContainer="TKMDEntities">
+    <EntitySetMapping Name="mh_tbl_comp_lines">
+      <EntityTypeMapping TypeName="TKMDModel.mh_tbl_comp_lines">
+        <MappingFragment StoreEntitySet="mh_tbl_comp_lines">
+          <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+          <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="disposition" ColumnName="disposition" />
+          <ScalarProperty Name="printed" ColumnName="printed" />
+          <ScalarProperty Name="required_date" ColumnName="required_date" />
+          <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+          <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+          <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mh_tbl_gannt_chart">
+      <EntityTypeMapping TypeName="TKMDModel.mh_tbl_gannt_chart">
+        <MappingFragment StoreEntitySet="mh_tbl_gannt_chart">
+          <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="project_manager" ColumnName="project_manager" />
+          <ScalarProperty Name="quoted_hours" ColumnName="quoted_hours" />
+          <ScalarProperty Name="est_ship_date" ColumnName="est_ship_date" />
+          <ScalarProperty Name="assembler" ColumnName="assembler" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="job_name" ColumnName="job_name" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+          <ScalarProperty Name="printed" ColumnName="printed" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="required_date" ColumnName="required_date" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+          <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+          <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+          <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+          <ScalarProperty Name="perc_ready" ColumnName="perc_ready" />
+          <ScalarProperty Name="total_labor" ColumnName="total_labor" />
+          <ScalarProperty Name="labor_perc_complete" ColumnName="labor_perc_complete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mh_tbl_prod_Sched_Original">
+      <EntityTypeMapping TypeName="TKMDModel.mh_tbl_prod_Sched_Original">
+        <MappingFragment StoreEntitySet="mh_tbl_prod_Sched_Original">
+          <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_desc" ColumnName="item_desc" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="project_manager" ColumnName="project_manager" />
+          <ScalarProperty Name="quoted_hours" ColumnName="quoted_hours" />
+          <ScalarProperty Name="est_ship_date" ColumnName="est_ship_date" />
+          <ScalarProperty Name="assembler" ColumnName="assembler" />
+          <ScalarProperty Name="ln_req_date" ColumnName="ln_req_date" />
+          <ScalarProperty Name="line_number" ColumnName="line_number" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="delete_flag" ColumnName="delete_flag" />
+          <ScalarProperty Name="job_name" ColumnName="job_name" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="source_location_id" ColumnName="source_location_id" />
+          <ScalarProperty Name="completed" ColumnName="completed" />
+          <ScalarProperty Name="printed" ColumnName="printed" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="hdr_req_date" ColumnName="hdr_req_date" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="qty_to_make" ColumnName="qty_to_make" />
+          <ScalarProperty Name="deposit_bin" ColumnName="deposit_bin" />
+          <ScalarProperty Name="total_labor" ColumnName="total_labor" />
+          <ScalarProperty Name="labor_perc_complete" ColumnName="labor_perc_complete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mh_tbl_qty_totals">
+      <EntityTypeMapping TypeName="TKMDModel.mh_tbl_qty_totals">
+        <MappingFragment StoreEntitySet="mh_tbl_qty_totals">
+          <ScalarProperty Name="prod_order_number" ColumnName="prod_order_number" />
+          <ScalarProperty Name="qty_requested" ColumnName="qty_requested" />
+          <ScalarProperty Name="qty_allocated" ColumnName="qty_allocated" />
+          <ScalarProperty Name="qty_on_pick_tickets" ColumnName="qty_on_pick_tickets" />
+          <ScalarProperty Name="qty_confirmed" ColumnName="qty_confirmed" />
+          <ScalarProperty Name="perc_ready" ColumnName="perc_ready" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

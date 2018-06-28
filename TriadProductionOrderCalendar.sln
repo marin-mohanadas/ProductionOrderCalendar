@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriadProductionOrderCalendar", "TriadProductionOrderCalendar\TriadProductionOrderCalendar.csproj", "{9AF52148-2304-4D7C-8E60-0023612289CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AF52148-2304-4D7C-8E60-0023612289CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF52148-2304-4D7C-8E60-0023612289CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF52148-2304-4D7C-8E60-0023612289CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF52148-2304-4D7C-8E60-0023612289CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E3675AD-3276-4AF3-B564-E6E708CE8ED3}
+	EndGlobalSection
+EndGlobal

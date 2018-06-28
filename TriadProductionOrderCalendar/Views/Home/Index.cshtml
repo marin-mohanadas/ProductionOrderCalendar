@@ -1,0 +1,36 @@
+﻿@using System.Collections.Generic;
+@using TriadProductionOrderCalendar.Models;
+@(Html.Kendo()
+            .Gantt<TaskViewModel, DependencyViewModel>((IEnumerable<TaskViewModel>)ViewBag.Tasks, (IEnumerable<DependencyViewModel>)ViewBag.Dependencies)
+            .Name("gantt")
+            .Views(views =>
+            {
+                views.DayView();
+                views.WeekView(weekview => weekview.Selected(true));
+                views.MonthView();
+            })
+            .Height(600)
+            .ShowWorkHours(false)
+            .ShowWorkDays(false)
+            .Snap(false)
+            .Columns(columns =>
+            {
+                columns.Bound(c => c.ProductionOrder).Title("Production Order").Width(50);
+                columns.Bound("start").Format("{0:MM/dd/yyyy}").Sortable(true).Width(50);
+                columns.Bound("end").Format("{0:MM/dd/yyyy}").Sortable(true).Width(50);
+
+            })
+            .DataSource(d => d
+                .Model(m =>
+                {
+                    m.Id(f => f.ProductionOrder);
+                    m.OrderId(f => f.OrderNo);
+                    m.Field(f => f.Title).DefaultValue(true);
+                    m.Field(f => f.PercentComplete).DefaultValue(true);
+
+                })
+                .Read(read => read.Action("mh_tbl_prod_Sched_Original_Read", "gantt"))
+                .Create(create => create.Action("mh_tbl_prod_Sched_Original_Create", "gantt"))
+                .Destroy(destroy => destroy.Action("mh_tbl_prod_Sched_Original_Destroy", "gantt"))
+            )
+)
